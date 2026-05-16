@@ -34,7 +34,7 @@ class AlumnoController extends Controller
 
     //----------------------------------------- Bajas -----------------------------------------
     public function edit(Alumno $alumno){
-        return view('editar', compact($alumno));//esto abre una nueva pagina y pasa los datos de alumno y los cargara
+        return view('editar', compact('alumno'));//esto abre una nueva pagina y pasa los datos de alumno y los cargara
     }
 
     public function update(Request $request, $id){
