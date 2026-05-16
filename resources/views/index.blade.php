@@ -166,9 +166,9 @@
 
         </div>
 
-        <!-- PAGINACION -->
+        <!-- PAGINACION 
         {{ $alumnos->links() }}
-
+-->
     </div>
 
     <!-- FOOTER -->
