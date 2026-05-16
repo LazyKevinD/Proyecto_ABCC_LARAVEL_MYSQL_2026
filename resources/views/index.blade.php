@@ -35,5 +35,58 @@
     </nav>
   </header>
 
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 style="font-size: 28px; margin-top: 50px;" class=" text-center">SERVICIOS ESCOLARES </h1>
+        <div class="col-md-10">
+          <!-- NVEGACION -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item" aria-current="page">Inicio</li>
+              <li class="breadcrumb-item active" aria-current="page">Alumnos</li>
+            </ol>
+          </nav>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="content-box-large">
+                <div class="panel-heading">
+                  <div class="panel-title">
+                    <h2>Listado de Alumnos</h2>
+                  </div>
+                </div>
+                <div class="panel-body">
+                    <!--@if(Session::has('message'))
+                    <div class="alert alert-success" role="alert" id="msj">
+                        {{ Session::get('message') }}
+                    </div>
+                    @endif-->
+                      <a href="{{route('alumnos.create')}}"
+                        class="btn btn-success mt-4 ml-3"> AGREGAR </a>
+                      <section class="example mt-4">
+                        <div class="table-responsive" id="tablaAlumnos">
+
+                          <table class='table table-striped table-bordered table-hover text-center'>
+                              <thead>
+                                <tr>
+                                  <th>Numero de Control</th>
+                                  <th>Nombre</th> <th>Semestre</th> <th>Fecha Nacimiento</th>
+                                  <th>ACCIONES</th>
+                                </tr>
+                              </thead>
+                              
+                          </table>
+                          <!--{!! $alumnos->links() !!}-->
+                        </div>
+                      </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
