@@ -136,7 +136,7 @@
                                   @endforeach
                               </tbody>
                           </table>
-                          {!! $alumnos->links() !!}
+                          <!--{!! $alumnos->links() !!}-->
 
                         </div>
                       </section>

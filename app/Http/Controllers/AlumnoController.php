@@ -57,10 +57,17 @@ class AlumnoController extends Controller
     }
 
     //----------------------------------------- Consultas -----------------------------------------
-    public function index()
-{
-    return "FUNCIONA";
-}
+    public function index(Request $request){
+
+        $filtro = $request->input('filtro');
+
+        $alumnos = Alumno::where('Nombre', 'like', "%{$filtro}%")
+            ->orWhere('Primer_Ap', 'like', "%{$filtro}%")
+            ->orderBy('id', 'desc')
+            ->paginate(5);
+
+        return view('index', compact('alumnos', 'filtro'));
+    }
 
     public function show (Alumno $alumno){
         return view('detalle', compact('alumno'));
