@@ -59,7 +59,7 @@ class AlumnoController extends Controller
     //----------------------------------------- Consultas -----------------------------------------
     public function index()
     {
-        $alumnos = [];
+        $alumnos = Alumno::paginate(5);
 
         return view('index', compact('alumnos'));
     }
