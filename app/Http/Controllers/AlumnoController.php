@@ -58,14 +58,11 @@ class AlumnoController extends Controller
 
     //----------------------------------------- Consultas -----------------------------------------
     public function index()
-{
-    $alumnos = [];
+    {
+        $alumnos = [];
 
-    return view('index', [
-        'alumnos' => $alumnos,
-        'filtro' => ''
-    ]);
-}
+        return view('index', compact('alumnos'));
+    }
 
     public function show (Alumno $alumno){
         return view('detalle', compact('alumno'));

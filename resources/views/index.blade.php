@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Test</title>
+<html lang="es">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="theme-color" content="#000000" />
+
+  <title>Servicios Escolares </title>
+
+    <!-- Bootstrap 5 (CSS y JS) -->
+    <!--@vite(['resources/js/app.js'])-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-  </head>
+
+  <!-- JQUERY para desaparecer mensajes
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+      setTimeout(function() {
+          $("#msj").fadeOut(1500);
+      },3000);
+  });
+  </script>-->
+</head>
+
 <body>
-<header>
+
+  <header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="/"> Servicios Escolares </a>
@@ -66,7 +87,35 @@
                       <section class="example mt-4">
                         <div class="table-responsive" id="tablaAlumnos">
 
-                          
+                          <table class='table table-striped table-bordered table-hover text-center'>
+                              <thead>
+                                <tr>
+                                  <th>Numero de Control</th>
+                                  <th>Nombre</th> <th>Semestre</th> <th>Fecha Nacimiento</th>
+                                  <th>ACCIONES</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                @foreach ($alumnos as $a)
+                                  <tr>
+                                    <td class="v-align-middle">{{$a->Num_Control}}</td>
+                                    <td class="v-align-middle">{{$a->Nombre}}</td>
+                                    <td class="v-align-middle">{{$a->Semestre}}</td>
+                                    <td class="v-align-middle">{{$a->Fecha_Nac}}</td>
+                                    <td class="v-align-middle">
+                                        <form action="{{ route('alumnos.destroy', $a) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminacion()">
+                                          @csrf
+                                          @method('DELETE')
+                                          <a class="btn btn-primary" href="{{route('alumnos.show', $a->id)}}">Detalle</a>
+                                          <a class="btn btn-warning" href="{{route('alumnos.edit', $a->id) }}">Editar</a>
+                                        <button type="submit" class="btn btn-danger">
+                                          ELIMINAR </button>
+                                      </form>
+                                    </td>
+                                  </tr>
+                                  @endforeach
+                              </tbody>
+                          </table>
                           <!--{!! $alumnos->links() !!}-->
                         </div>
                       </section>
@@ -79,5 +128,28 @@
     </div>
   </div>
 
+  <hr>
+
+
+  <footer class="text-muted mt-3 mb-3">
+    <div align="center">
+      FOOTER
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+
+    function confirmarEliminacion()
+    {
+    var x = confirm("Estas seguro de ELIMINAR?");
+    if (x)
+      return true;
+    else
+      return false;
+    }
+
+</script>
+
 </body>
+
 </html>
