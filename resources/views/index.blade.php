@@ -55,7 +55,22 @@
                     <h2>Listado de Alumnos</h2>
                   </div>
                 </div>
-                
+                <div class="panel-body">
+                    <!--@if(Session::has('message'))
+                    <div class="alert alert-success" role="alert" id="msj">
+                        {{ Session::get('message') }}
+                    </div>
+                    @endif-->
+                      <a href="{{route('alumnos.create')}}"
+                        class="btn btn-success mt-4 ml-3"> AGREGAR </a>
+                      <section class="example mt-4">
+                        <div class="table-responsive" id="tablaAlumnos">
+
+                          
+                          <!--{!! $alumnos->links() !!}-->
+                        </div>
+                      </section>
+                </div>
               </div>
             </div>
           </div>
