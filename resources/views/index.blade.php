@@ -114,11 +114,11 @@
                               <tbody>
                                 @foreach ($alumnos as $a)
                                   <tr>
-                                    <td class=v-align-middle>{{$a->Num_Control}}</td>
-                                    <td class=v-align-middle>{{$a->Nombre}}</td>
-                                    <td class=v-align-middle>{{$a->Semestre}}</td>
-                                    <td class=v-align-middle>{{$a->Fecha_Nac}}</td>
-                                    <td class=v-align-middle>
+                                    <td class="v-align-middle">{{$a->Num_Control}}</td>
+                                    <td class="v-align-middle">{{$a->Nombre}}</td>
+                                    <td class="v-align-middle">{{$a->Semestre}}</td>
+                                    <td class="v-align-middle">{{$a->Fecha_Nac}}</td>
+                                    <td class="v-align-middle">
 
                                         <form action="{{ route('alumnos.destroy', $a) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminacion()">
                                           @csrf
