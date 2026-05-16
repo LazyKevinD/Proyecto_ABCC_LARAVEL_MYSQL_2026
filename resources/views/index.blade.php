@@ -32,7 +32,7 @@
   <header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/"> Servicios Escolares </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
           aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -154,8 +154,6 @@
       </div>
 
     </div>
-
-  </div>
 
   </div>
 
